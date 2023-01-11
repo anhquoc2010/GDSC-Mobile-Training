@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import '../styles/text/mulish.dart';
+import '../../../core/theme/mulish.dart';
 
 class HomeSearchBar extends StatelessWidget {
   const HomeSearchBar({super.key});

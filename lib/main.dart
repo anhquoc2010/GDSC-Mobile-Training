@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_111122_login_screen/management/route_management.dart';
+import 'core/router/route_manager.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,8 +12,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      initialRoute: RouteManagement.initRoute,
-      routes: RouteManagement.routes,
+      initialRoute: RouteManager.initRoute,
+      routes: RouteManager.routes,
       theme: ThemeData(),
     );
   }

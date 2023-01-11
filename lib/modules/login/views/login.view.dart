@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_111122_login_screen/shared_widget/login_app_bar.dart';
-import 'package:flutter_111122_login_screen/shared_widget/login_button.dart';
-import 'package:flutter_111122_login_screen/shared_widget/login_form.dart';
-import 'package:flutter_111122_login_screen/styles/text/mulish.dart';
+import '../widgets/app_bar.widget.dart';
+import '../widgets/button.widget.dart';
+import '../widgets/form.widget.dart';
+import '../../../core/theme/mulish.dart';
 
 class LoginPage extends StatefulWidget {
-  const LoginPage({super.key, required this.title});
-
   final String title;
+  const LoginPage({
+    super.key,
+    required this.title,
+  });
 
   @override
   State<LoginPage> createState() => _LoginPageState();
