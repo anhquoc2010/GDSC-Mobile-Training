@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
-
-import '../styles/text/mulish.dart';
+import '../../../core/theme/mulish.dart';
 
 class LoginButton extends StatelessWidget {
   final void Function() onPressed;
 
-  const LoginButton({super.key, required this.onPressed});
+  const LoginButton({
+    super.key,
+    required this.onPressed,
+  });
 
   @override
   Widget build(BuildContext context) {

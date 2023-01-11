@@ -1,18 +1,17 @@
 import 'package:chip_list/chip_list.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_111122_login_screen/styles/text/mulish.dart';
+import '../../../core/theme/mulish.dart';
+import '../../../data/models/building.model.dart';
 
 class HomeSuggestionList extends StatelessWidget {
-  const HomeSuggestionList({super.key});
+  final List<BuildingModel> buildings;
+  const HomeSuggestionList({
+    super.key,
+    required this.buildings,
+  });
 
   @override
   Widget build(BuildContext context) {
-    const citiesNameList = [
-      'Tất cả',
-      'Đà Nẵng',
-      'Hà Nội',
-      'Sài Gòn',
-    ];
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -37,7 +36,7 @@ class HomeSuggestionList extends StatelessWidget {
           height: 10,
         ),
         ChipList(
-          listOfChipNames: citiesNameList,
+          listOfChipNames: buildings.map((e) => e.name).toList(),
           style: Mulish.mulishHomeStyle.copyWith(
             color: Colors.white,
             fontSize: 12,
@@ -55,11 +54,11 @@ class HomeSuggestionList extends StatelessWidget {
         GridView.builder(
           padding: const EdgeInsets.only(bottom: 20),
           shrinkWrap: true,
-          itemCount: 7,
+          itemCount: buildings.length,
           physics: const NeverScrollableScrollPhysics(),
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,
-            childAspectRatio: 0.75,
+            childAspectRatio: 0.65,
             crossAxisSpacing: 27,
             mainAxisSpacing: 20,
           ),
@@ -74,15 +73,16 @@ class HomeSuggestionList extends StatelessWidget {
                 children: [
                   Container(
                     height: 125,
-                    decoration: const BoxDecoration(
-                      borderRadius: BorderRadius.only(
+                    decoration: BoxDecoration(
+                      borderRadius: const BorderRadius.only(
                         topLeft: Radius.circular(15),
                         topRight: Radius.circular(15),
                       ),
                       image: DecorationImage(
-                        image: NetworkImage(
-                            'https://haidangtravel.com/image/blog/Mountain-Lodge-Homestay-Mang-Den.JPG'),
-                        fit: BoxFit.cover,
+                        image: NetworkImage(buildings[index].layers.isEmpty
+                            ? 'https://dut.udn.vn/Files/admin/images/Tuyen_sinh/2021/Sodo/Sodo2.png'
+                            : buildings[index].layers[0].imageUrl),
+                        fit: BoxFit.contain,
                       ),
                     ),
                   ),
@@ -92,7 +92,7 @@ class HomeSuggestionList extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'Coco homestay',
+                          buildings[index].name,
                           style: Mulish.mulishHomeStyle.copyWith(fontSize: 15),
                         ),
                         Row(
@@ -104,7 +104,7 @@ class HomeSuggestionList extends StatelessWidget {
                             ),
                             const SizedBox(width: 6),
                             Text(
-                              'Tân An, Hội An',
+                              buildings[index].categoryName,
                               style: Mulish.mulishHomeStyle.copyWith(
                                 fontSize: 9,
                                 fontWeight: FontWeight.w400,
@@ -113,29 +113,39 @@ class HomeSuggestionList extends StatelessWidget {
                           ],
                         ),
                         Row(
-                          children: const [
-                            Icon(
-                              Icons.check,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            const Icon(
+                              Icons.description,
                               color: Color(0xffCCCCCC),
                               size: 15,
                             ),
-                            SizedBox(width: 6),
-                            Icon(
-                              Icons.star,
-                              color: Color(0xffE6E600),
+                            const SizedBox(width: 6),
+                            Flexible(
+                              child: Text(
+                                buildings[index].description,
+                                style: Mulish.mulishHomeStyle.copyWith(
+                                  fontSize: 9,
+                                  fontWeight: FontWeight.w400,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                        Row(
+                          children: [
+                            const Icon(
+                              Icons.layers,
+                              color: Color(0xffCCCCCC),
                               size: 15,
                             ),
-                            SizedBox(width: 5),
-                            Icon(
-                              Icons.star,
-                              color: Color(0xffE6E600),
-                              size: 15,
-                            ),
-                            SizedBox(width: 5),
-                            Icon(
-                              Icons.star,
-                              color: Color(0xffE6E600),
-                              size: 15,
+                            const SizedBox(width: 6),
+                            Text(
+                              '${buildings[index].layers.length.toString()} tầng',
+                              style: Mulish.mulishHomeStyle.copyWith(
+                                fontSize: 9,
+                                fontWeight: FontWeight.w400,
+                              ),
                             ),
                           ],
                         ),

@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_111122_login_screen/styles/text/mulish.dart';
+import '../../../core/theme/mulish.dart';
+import '../../../data/models/building.model.dart';
 
 class HomeDiscoveryList extends StatelessWidget {
-  const HomeDiscoveryList({super.key});
+  final List<BuildingModel> buildings;
+  const HomeDiscoveryList({
+    super.key,
+    required this.buildings,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -20,19 +25,20 @@ class HomeDiscoveryList extends StatelessWidget {
         SizedBox(
           height: 117,
           child: ListView.separated(
-            itemCount: 4,
+            itemCount: buildings.length,
             controller: ScrollController(),
             scrollDirection: Axis.horizontal,
             separatorBuilder: (context, index) => const SizedBox(width: 15),
             itemBuilder: (context, index) => GestureDetector(
               child: Container(
                 width: 139,
-                decoration: const BoxDecoration(
-                  borderRadius: BorderRadius.all(Radius.circular(10)),
+                decoration: BoxDecoration(
+                  borderRadius: const BorderRadius.all(Radius.circular(10)),
                   image: DecorationImage(
-                    image: NetworkImage(
-                        'https://www.ctvnews.ca/polopoly_fs/1.5036379.1595530668!/httpImage/image.jpg_gen/derivatives/landscape_1020/image.jpg'),
-                    fit: BoxFit.cover,
+                    image: NetworkImage(buildings[index].layers.isEmpty
+                        ? 'https://dut.udn.vn/Files/admin/images/Tuyen_sinh/2021/Sodo/Sodo2.png'
+                        : buildings[index].layers[0].imageUrl),
+                    fit: BoxFit.contain,
                   ),
                 ),
                 alignment: Alignment.bottomCenter,
@@ -47,7 +53,7 @@ class HomeDiscoveryList extends StatelessWidget {
                     color: Colors.black.withOpacity(0.4),
                   ),
                   child: Text(
-                    'Top những thành phố đáng sống',
+                    buildings[index].name,
                     style: Mulish.mulishLoginStyle.copyWith(
                       color: Colors.white,
                       fontSize: 11,

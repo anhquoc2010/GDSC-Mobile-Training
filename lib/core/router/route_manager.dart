@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_111122_login_screen/home_page.dart';
-import 'package:flutter_111122_login_screen/login_page.dart';
+import '../../modules/home/views/home.view.dart';
+import '../../modules/login/views/login.view.dart';
 
-abstract class RouteManagement {
+abstract class RouteManager {
   static const String initRoute = "/";
   static const String loginRoute = "/login";
   static const String homeRoute = "/home";

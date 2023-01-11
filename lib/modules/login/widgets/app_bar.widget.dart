@@ -1,6 +1,6 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import '../../../core/theme/mulish.dart';
 
-import '../styles/text/mulish.dart';
 
 class LoginAppBar extends StatelessWidget {
   const LoginAppBar({super.key});
