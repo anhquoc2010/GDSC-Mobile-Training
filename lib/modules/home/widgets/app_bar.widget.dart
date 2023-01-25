@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import '../../../core/theme/mulish.dart';
+import 'package:flutter_111122_login_screen/core/theme/color_styles.dart';
+import 'package:flutter_111122_login_screen/core/theme/text_styles.dart';
 
 class HomeAppBar extends StatefulWidget {
   const HomeAppBar({super.key});
@@ -62,7 +63,7 @@ class _HomeAppBarState extends State<HomeAppBar> {
                     onTap: _onWillPop,
                     child: Text(
                       userName.toString(),
-                      style: Mulish.mulishHomeStyle,
+                      style: mulish700,
                     ),
                   ),
                 ),
@@ -76,13 +77,13 @@ class _HomeAppBarState extends State<HomeAppBar> {
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
                       border: Border.all(
-                        color: const Color(0xff3333FF),
+                        color: palatinateBlue,
                         width: 1,
                       ),
                     ),
                     child: const Icon(
                       Icons.notifications_none_rounded,
-                      color: Color(0xff3333FF),
+                      color: palatinateBlue,
                       size: 25,
                     ),
                   ),
@@ -97,12 +98,11 @@ class _HomeAppBarState extends State<HomeAppBar> {
                         color: Colors.red,
                         shape: BoxShape.circle,
                       ),
-                      child: const Text(
+                      child: Text(
                         '1',
-                        style: TextStyle(
+                        style: mulish400.copyWith(
                           fontSize: 7,
                           color: Colors.white,
-                          fontFamily: 'Mulish',
                         ),
                       ),
                     ),

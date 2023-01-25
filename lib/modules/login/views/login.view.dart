@@ -1,15 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_111122_login_screen/core/router/route_manager.dart';
+import 'package:flutter_111122_login_screen/core/theme/color_styles.dart';
+import 'package:flutter_111122_login_screen/core/theme/text_styles.dart';
 import '../widgets/app_bar.widget.dart';
 import '../widgets/button.widget.dart';
 import '../widgets/form.widget.dart';
-import '../../../core/theme/mulish.dart';
 
 class LoginPage extends StatefulWidget {
-  final String title;
-  const LoginPage({
-    super.key,
-    required this.title,
-  });
+  const LoginPage({super.key});
 
   @override
   State<LoginPage> createState() => _LoginPageState();
@@ -67,7 +65,7 @@ class _LoginPageState extends State<LoginPage> {
                     onPressed: () async {
                       if (loginFormKey.currentState!.validate()) {
                         final result = await Navigator.of(context).pushNamed(
-                          '/home',
+                          bottomNavRoute,
                           arguments: {
                             'email': emailFieldController.text,
                           },
@@ -89,14 +87,14 @@ class _LoginPageState extends State<LoginPage> {
                       text: TextSpan(children: [
                     TextSpan(
                       text: 'Chưa có tài khoản? ',
-                      style: Mulish.mulishLoginStyle.copyWith(
-                        color: const Color(0xffB3B3B3),
+                      style: mulish400.copyWith(
+                        color: philippineSilver,
                       ),
                     ),
                     TextSpan(
                       text: 'Đăng ký',
-                      style: Mulish.mulishLoginStyle.copyWith(
-                        color: const Color(0xff3333FF),
+                      style: mulish400.copyWith(
+                        color: palatinateBlue,
                       ),
                     ),
                   ])),

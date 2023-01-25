@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import '../../../core/theme/mulish.dart';
+import 'package:flutter_111122_login_screen/core/theme/text_styles.dart';
+import '../../../core/theme/color_styles.dart';
 
 class HomeSearchBar extends StatelessWidget {
   const HomeSearchBar({super.key});
@@ -12,21 +13,21 @@ class HomeSearchBar extends StatelessWidget {
         filled: true,
         fillColor: Colors.white,
         hintText: 'Nhập điểm đến...',
-        hintStyle: Mulish.mulishHomeStyle.copyWith(
+        hintStyle: mulish700.copyWith(
           fontSize: 13,
-          color: const Color(0xffE6E6E6),
+          color: platinum,
         ),
         enabledBorder: const OutlineInputBorder(
-          borderSide: BorderSide(color: Color(0xff6666FF), width: 1.0),
+          borderSide: BorderSide(color: veryLightBlue, width: 1.0),
           borderRadius: BorderRadius.all(Radius.circular(10)),
         ),
         focusedBorder: const OutlineInputBorder(
-          borderSide: BorderSide(color: Color(0xff6666FF), width: 1.0),
+          borderSide: BorderSide(color: veryLightBlue, width: 1.0),
           borderRadius: BorderRadius.all(Radius.circular(10)),
         ),
         prefixIcon: const Icon(
           Icons.search,
-          color: Color(0xff6666FF),
+          color: veryLightBlue,
         ),
         contentPadding: const EdgeInsets.symmetric(vertical: 12),
       ),

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../../core/theme/mulish.dart';
+import 'package:flutter_111122_login_screen/core/theme/text_styles.dart';
 import '../../../data/models/building.model.dart';
 
 class HomeDiscoveryList extends StatelessWidget {
@@ -18,7 +18,7 @@ class HomeDiscoveryList extends StatelessWidget {
           alignment: Alignment.centerLeft,
           child: Text(
             'Khám phá thêm',
-            style: Mulish.mulishHomeStyle,
+            style: mulish700,
           ),
         ),
         const SizedBox(height: 15),
@@ -54,7 +54,7 @@ class HomeDiscoveryList extends StatelessWidget {
                   ),
                   child: Text(
                     buildings[index].name,
-                    style: Mulish.mulishLoginStyle.copyWith(
+                    style: mulish400.copyWith(
                       color: Colors.white,
                       fontSize: 11,
                     ),

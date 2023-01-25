@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../../core/theme/mulish.dart';
-
+import 'package:flutter_111122_login_screen/core/theme/text_styles.dart';
 
 class LoginAppBar extends StatelessWidget {
   const LoginAppBar({super.key});
@@ -19,10 +18,7 @@ class LoginAppBar extends StatelessWidget {
           alignment: Alignment.centerLeft,
           child: Text(
             'Đăng nhập',
-            style: Mulish.mulishLoginStyle.copyWith(
-              fontSize: 24,
-              fontWeight: FontWeight.w700,
-            ),
+            style: mulish700.copyWith(fontSize: 24),
           ),
         ),
       ],

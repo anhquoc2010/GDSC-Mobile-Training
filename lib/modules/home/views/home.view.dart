@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_111122_login_screen/core/theme/color_styles.dart';
 import '../../../data/models/building.model.dart';
 import '../../../data/repositories/building.repository.dart';
 import '../widgets/app_bar.widget.dart';
@@ -7,9 +8,7 @@ import '../widgets/search_bar.widget.dart';
 import '../widgets/suggestion_list.widget.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({super.key, required this.title});
-
-  final String title;
+  const HomePage({super.key});
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -36,7 +35,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 240, 240, 240),
+      backgroundColor: antiFlashWhite,
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.fromLTRB(20, 55, 20, 0),

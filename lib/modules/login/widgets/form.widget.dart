@@ -1,6 +1,7 @@
 import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
-import '../../../core/theme/mulish.dart';
+import 'package:flutter_111122_login_screen/core/theme/color_styles.dart';
+import 'package:flutter_111122_login_screen/core/theme/text_styles.dart';
 
 class LoginForm extends StatelessWidget {
   final String email;
@@ -34,13 +35,13 @@ class LoginForm extends StatelessWidget {
               alignment: Alignment.centerLeft,
               child: Text(
                 'Tài khoản: $email',
-                style: Mulish.mulishLoginStyle,
+                style: mulish400,
               ),
             ),
           ),
           TextFormField(
             controller: emailFieldController,
-            style: Mulish.mulishLoginStyle,
+            style: mulish400,
             validator: (value) {
               if (value == null || value.isEmpty) {
                 return 'Vui lòng nhập email';
@@ -55,26 +56,26 @@ class LoginForm extends StatelessWidget {
               prefixIcon: const Icon(
                 Icons.email,
                 size: 16,
-                color: Color(0xffE6E6E6),
+                color: platinum,
               ),
               hintText: 'Email',
-              hintStyle: Mulish.mulishLoginStyle.copyWith(
-                color: const Color(0xffE6E6E6),
+              hintStyle: mulish400.copyWith(
+                color: platinum,
               ),
               enabledBorder: const OutlineInputBorder(
-                borderSide: BorderSide(color: Color(0xffE6E6E6), width: 1.0),
+                borderSide: BorderSide(color: platinum, width: 1.0),
                 borderRadius: BorderRadius.all(Radius.circular(10)),
               ),
               focusedBorder: const OutlineInputBorder(
-                borderSide: BorderSide(color: Color(0xff6666FF), width: 1.0),
+                borderSide: BorderSide(color: veryLightBlue, width: 1.0),
                 borderRadius: BorderRadius.all(Radius.circular(10)),
               ),
               errorBorder: const OutlineInputBorder(
-                borderSide: BorderSide(color: Color(0xffFF6666), width: 1.0),
+                borderSide: BorderSide(color: pastelRed, width: 1.0),
                 borderRadius: BorderRadius.all(Radius.circular(10)),
               ),
               focusedErrorBorder: const OutlineInputBorder(
-                borderSide: BorderSide(color: Color(0xffFF6666), width: 1.0),
+                borderSide: BorderSide(color: pastelRed, width: 1.0),
                 borderRadius: BorderRadius.all(Radius.circular(10)),
               ),
             ),
@@ -85,14 +86,14 @@ class LoginForm extends StatelessWidget {
               alignment: Alignment.centerLeft,
               child: Text(
                 'Mật khẩu: $password',
-                style: Mulish.mulishLoginStyle,
+                style: mulish400,
               ),
             ),
           ),
           TextFormField(
             controller: passwordFieldController,
             obscureText: isHidden,
-            style: Mulish.mulishLoginStyle,
+            style: mulish400,
             validator: (value) {
               if (value == null || value.isEmpty) {
                 return 'Vui lòng nhập mật khẩu';
@@ -107,7 +108,7 @@ class LoginForm extends StatelessWidget {
               prefixIcon: const Icon(
                 Icons.lock,
                 size: 16,
-                color: Color(0xffE6E6E6),
+                color: platinum,
               ),
               suffixIcon: IconButton(
                 splashRadius: 20,
@@ -117,27 +118,27 @@ class LoginForm extends StatelessWidget {
                       ? Icons.visibility_outlined
                       : Icons.visibility_off_outlined,
                   size: 16,
-                  color: const Color(0xffE6E6E6),
+                  color: platinum,
                 ),
               ),
               hintText: 'Mật khẩu',
-              hintStyle: Mulish.mulishLoginStyle.copyWith(
-                color: const Color(0xffE6E6E6),
+              hintStyle: mulish400.copyWith(
+                color: platinum,
               ),
               enabledBorder: const OutlineInputBorder(
-                borderSide: BorderSide(color: Color(0xffE6E6E6), width: 1.0),
+                borderSide: BorderSide(color: platinum, width: 1.0),
                 borderRadius: BorderRadius.all(Radius.circular(10)),
               ),
               focusedBorder: const OutlineInputBorder(
-                borderSide: BorderSide(color: Color(0xff6666FF), width: 1.0),
+                borderSide: BorderSide(color: veryLightBlue, width: 1.0),
                 borderRadius: BorderRadius.all(Radius.circular(10)),
               ),
               errorBorder: const OutlineInputBorder(
-                borderSide: BorderSide(color: Color(0xffFF6666), width: 1.0),
+                borderSide: BorderSide(color: pastelRed, width: 1.0),
                 borderRadius: BorderRadius.all(Radius.circular(10)),
               ),
               focusedErrorBorder: const OutlineInputBorder(
-                borderSide: BorderSide(color: Color(0xffFF6666), width: 1.0),
+                borderSide: BorderSide(color: pastelRed, width: 1.0),
                 borderRadius: BorderRadius.all(Radius.circular(10)),
               ),
             ),
@@ -147,10 +148,7 @@ class LoginForm extends StatelessWidget {
             alignment: Alignment.centerRight,
             child: Text(
               'Quên mật khẩu?',
-              style: Mulish.mulishLoginStyle.copyWith(
-                fontWeight: FontWeight.w700,
-                color: const Color(0xff3333FF),
-              ),
+              style: mulish700.copyWith(color: palatinateBlue),
             ),
           ),
         ],

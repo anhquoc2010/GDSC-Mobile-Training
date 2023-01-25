@@ -1,6 +1,7 @@
 import 'package:chip_list/chip_list.dart';
 import 'package:flutter/material.dart';
-import '../../../core/theme/mulish.dart';
+import 'package:flutter_111122_login_screen/core/theme/color_styles.dart';
+import 'package:flutter_111122_login_screen/core/theme/text_styles.dart';
 import '../../../data/models/building.model.dart';
 
 class HomeSuggestionList extends StatelessWidget {
@@ -21,12 +22,12 @@ class HomeSuggestionList extends StatelessWidget {
           children: [
             const Text(
               'Đề xuất',
-              style: Mulish.mulishHomeStyle,
+              style: mulish700,
             ),
             Text(
               'xem tất cả',
-              style: Mulish.mulishLoginStyle.copyWith(
-                color: const Color(0xFF0000FF),
+              style: mulish400.copyWith(
+                color: Colors.blue,
                 fontSize: 11,
               ),
             ),
@@ -37,17 +38,17 @@ class HomeSuggestionList extends StatelessWidget {
         ),
         ChipList(
           listOfChipNames: buildings.map((e) => e.name).toList(),
-          style: Mulish.mulishHomeStyle.copyWith(
+          style: mulish700.copyWith(
             color: Colors.white,
             fontSize: 12,
           ),
           // ignore: prefer_const_literals_to_create_immutables
           listOfChipIndicesCurrentlySeclected: [0],
           mainAxisAlignment: MainAxisAlignment.start,
-          activeBgColorList: const [Color(0xff3333FF)],
+          activeBgColorList: const [palatinateBlue],
           activeTextColorList: const [Colors.white],
-          inactiveBorderColorList: const [Color(0xff3333FF)],
-          inactiveTextColorList: const [Color(0xff3333FF)],
+          inactiveBorderColorList: const [palatinateBlue],
+          inactiveTextColorList: const [palatinateBlue],
           borderRadiiList: const [50],
         ),
         const SizedBox(height: 15),
@@ -93,22 +94,19 @@ class HomeSuggestionList extends StatelessWidget {
                       children: [
                         Text(
                           buildings[index].name,
-                          style: Mulish.mulishHomeStyle.copyWith(fontSize: 15),
+                          style: mulish700.copyWith(fontSize: 15),
                         ),
                         Row(
                           children: [
                             const Icon(
                               Icons.location_on_outlined,
-                              color: Color(0xffCCCCCC),
+                              color: chineseSilver,
                               size: 15,
                             ),
                             const SizedBox(width: 6),
                             Text(
                               buildings[index].categoryName,
-                              style: Mulish.mulishHomeStyle.copyWith(
-                                fontSize: 9,
-                                fontWeight: FontWeight.w400,
-                              ),
+                              style: mulish400.copyWith(fontSize: 9),
                             ),
                           ],
                         ),
@@ -117,17 +115,14 @@ class HomeSuggestionList extends StatelessWidget {
                           children: [
                             const Icon(
                               Icons.description,
-                              color: Color(0xffCCCCCC),
+                              color: chineseSilver,
                               size: 15,
                             ),
                             const SizedBox(width: 6),
                             Flexible(
                               child: Text(
                                 buildings[index].description,
-                                style: Mulish.mulishHomeStyle.copyWith(
-                                  fontSize: 9,
-                                  fontWeight: FontWeight.w400,
-                                ),
+                                style: mulish400.copyWith(fontSize: 9),
                               ),
                             ),
                           ],
@@ -136,16 +131,13 @@ class HomeSuggestionList extends StatelessWidget {
                           children: [
                             const Icon(
                               Icons.layers,
-                              color: Color(0xffCCCCCC),
+                              color: chineseSilver,
                               size: 15,
                             ),
                             const SizedBox(width: 6),
                             Text(
                               '${buildings[index].layers.length.toString()} tầng',
-                              style: Mulish.mulishHomeStyle.copyWith(
-                                fontSize: 9,
-                                fontWeight: FontWeight.w400,
-                              ),
+                              style: mulish400.copyWith(fontSize: 9),
                             ),
                           ],
                         ),
@@ -154,7 +146,7 @@ class HomeSuggestionList extends StatelessWidget {
                           alignment: Alignment.centerRight,
                           child: Icon(
                             Icons.favorite_border,
-                            color: Color(0xffCCCCCC),
+                            color: chineseSilver,
                             size: 18,
                           ),
                         ),

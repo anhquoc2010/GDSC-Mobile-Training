@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'core/router/route_manager.dart';
 
 void main() {
@@ -12,8 +13,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      initialRoute: RouteManager.initRoute,
-      routes: RouteManager.routes,
+      initialRoute: initRoute,
+      routes: routes,
       theme: ThemeData(),
     );
   }
