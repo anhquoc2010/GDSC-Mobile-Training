@@ -39,7 +39,7 @@ class _BottomNavigationState extends State<BottomNavigation> {
           ),
         ],
         currentIndex: _selectedIndex,
-        selectedItemColor: palatinateBlue,
+        selectedItemColor: veryLightBlue,
         onTap: _onItemTapped,
       ),
     );
